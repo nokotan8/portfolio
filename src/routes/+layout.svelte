@@ -28,13 +28,13 @@
             const body_except_dock =
                 document.getElementById("body-except-dock");
             if (body_except_dock) {
-                fade_out(body_except_dock, 20);
+                fade_out(body_except_dock, 100);
                 setTimeout(() => {
                     goto(location);
-                }, 100);
+                }, 160);
                 setTimeout(() => {
-                    fade_in(body_except_dock, 20);
-                }, 100);
+                    fade_in(body_except_dock, 120);
+                }, 230);
             }
         }
     };
