@@ -17,6 +17,7 @@
             page_state.first_load = false;
             return page.url.pathname === `${base}/` ? "dock-float-in" : "";
         }
+
         return "";
     };
 
@@ -43,11 +44,11 @@
 </script>
 
 <div
-    class={"bg-dark-surface fixed bottom-0 left-0 z-50 w-full shadow-md backdrop-blur " +
+    class={"bg-dark-surface border-dark-highlight-low z-50 h-10 w-full border-b-1 shadow-md " +
         animate_dock()}
 >
     <div
-        class="text-dark-subtle mx-auto flex max-w-4xl items-center justify-around px-4 py-2"
+        class="text-dark-subtle mx-auto mb-10 flex max-w-4xl items-center justify-around px-4 py-2"
     >
         <a
             onclick={(e) => navigate(e, base + "/")}
@@ -70,6 +71,13 @@
             class={"dock-item " + is_on_page("socials")}>Socials</a
         >
     </div>
+</div>
+
+<div
+    id="footer"
+    class="text-dark-subtle border-t-2 border-dark-highlight-low absolute bottom-[-40px] left-0 mt-auto flex h-10 w-full flex-col items-center justify-end"
+>
+    test
 </div>
 
 <div id="body-except-dock">
