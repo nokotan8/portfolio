@@ -1,0 +1,1 @@
+import{P as i}from"./BsR591jf.js";function n(s,l,t){var r=s==null?"":""+s;return r===""?null:r}function h(s,l,t,r,f,c){var e=s.__className;if(i||e!==t||e===void 0){var a=n(t);(!i||a!==s.getAttribute("class"))&&(a==null?s.removeAttribute("class"):s.className=a),s.__className=t}return c}const p={first_load:!0};export{p,h as s};
