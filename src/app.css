@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    @apply flex flex-col items-center;
+    @apply flex flex-col items-center justify-between;
     @apply bg-dark-base;
     @apply text-dark-text;
 }
@@ -49,7 +54,7 @@ body {
     animation-fill-mode: forwards;
 }
 
-.dock-float-in {
+.header-float-in {
     opacity: 0;
     animation-name: float_in_top;
     animation-delay: 1.6s;
@@ -58,7 +63,16 @@ body {
     animation-fill-mode: forwards;
 }
 
-.dock-item {
+.footer-float-in {
+    opacity: 0;
+    animation-name: float_in_bottom;
+    animation-delay: 1.6s;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.header-item {
     @apply h-8;
     @apply border-b-2 border-transparent;
     @apply text-center;
@@ -66,7 +80,7 @@ body {
     @apply hover:border-b-dark-iris hover:text-dark-text;
 }
 
-.dock-item-selected {
+.header-item-selected {
     @apply border-b-dark-iris text-dark-text;
 }
 

@@ -11,7 +11,7 @@
     };
 </script>
 
-<div id="about-me" class="text-dark-text mt-[25vh] flex flex-col gap-4">
+<div id="about-me" class="text-dark-text flex flex-col gap-4">
     <h1 class={"mb-3 text-5xl font-bold " + animate_about_me("name")}>
         Hi, I'm Justin.
     </h1>
@@ -26,8 +26,13 @@
             <li>Concurrent / parallel computing</li>
             <li>Cryptographic hashing</li>
             <li>Computing algorithms</li>
+        </ul>
+        <p><span class="text-dark-rose font-bold">Hobbies:</span></p>
+        <ul class="flex flex-col gap-0.5 indent-5">
+            <li>Fountain pens</li>
             <li>Games with parry mechanics</li>
             <li>Manga</li>
+            <li>Cooking</li>
             <li>Badminton</li>
         </ul>
         I use Arch btw
