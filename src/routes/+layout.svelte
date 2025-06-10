@@ -35,16 +35,14 @@
             e.preventDefault();
             const body_except_header = document.getElementById(
                 "body-except-header-footer"
-            );
-            if (body_except_header) {
-                fade_out(body_except_header, 100);
-                setTimeout(() => {
-                    goto(location);
-                }, 160);
-                setTimeout(() => {
-                    fade_in(body_except_header, 120);
-                }, 230);
-            }
+            )!;
+            fade_out(body_except_header, 100);
+            setTimeout(() => {
+                goto(location);
+            }, 160);
+            setTimeout(() => {
+                fade_in(body_except_header, 150);
+            }, 280);
         }
     };
 
@@ -55,7 +53,7 @@
     class={`bg-dark-surface border-dark-highlight-low z-50 h-10 w-full border-b-1 shadow-md ${animate_header_footer(true, false)}`}
 >
     <div
-        class="text-dark-subtle mx-auto mb-10 flex max-w-4xl items-center justify-around px-4 py-2"
+        class="flex justify-around items-center py-2 px-4 mx-auto mb-10 max-w-4xl text-dark-subtle"
     >
         <a
             onclick={(e) => navigate(e, base + "/")}
@@ -80,15 +78,15 @@
     </div>
 </div>
 
-<div id="body-except-header-footer">
+<div id="body-except-header-footer" class="flex! grow flex-col">
     {@render children()}
 </div>
 
 <div
     id="footer"
-    class={`text-dark-subtle border-dark-highlight-low mt-10 flex h-10 w-full flex-col justify-center border-t-2 ${animate_header_footer(false, true)}`}
+    class={`text-dark-subtle border-dark-highlight-low mt-10 flex min-h-10 w-full flex-col justify-center border-t-2 ${animate_header_footer(false, true)}`}
 >
-    <div class="flex h-full w-full flex-row items-center justify-between px-5">
+    <div class="flex flex-row justify-between items-center px-5 w-full h-full">
         <a href="https://github.com/nokotan8/portfolio" class="text-xs"
             >Source</a
         >

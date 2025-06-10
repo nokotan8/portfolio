@@ -11,23 +11,26 @@
     };
 </script>
 
-<div id="about-me" class="text-dark-text flex flex-col gap-4">
+<div
+    id="about-me"
+    class="flex flex-col gap-4 justify-center text-dark-text grow"
+>
     <h1 class={"mb-3 text-5xl font-bold " + animate_about_me("name")}>
         Hi, I'm Justin.
     </h1>
     <div class={"text-md flex flex-col gap-2 " + animate_about_me("about-me")}>
-        <p><span class="text-dark-rose font-bold">University:</span> UNSW</p>
+        <p><span class="font-bold text-dark-rose">University:</span> UNSW</p>
         <p>
-            <span class="text-dark-rose font-bold">Degree:</span> Computer Science
+            <span class="font-bold text-dark-rose">Degree:</span> Computer Science
         </p>
-        <p><span class="text-dark-rose font-bold">Interests:</span></p>
+        <p><span class="font-bold text-dark-rose">Interests:</span></p>
         <ul class="flex flex-col gap-0.5 indent-5">
             <li>Web application security</li>
             <li>Concurrent / parallel computing</li>
             <li>Cryptographic hashing</li>
             <li>Computing algorithms</li>
         </ul>
-        <p><span class="text-dark-rose font-bold">Hobbies:</span></p>
+        <p><span class="font-bold text-dark-rose">Hobbies:</span></p>
         <ul class="flex flex-col gap-0.5 indent-5">
             <li>Fountain pens</li>
             <li>Games with parry mechanics</li>
