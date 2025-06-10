@@ -5,7 +5,7 @@ const fade_in = (el: HTMLElement, anim_len: number) => {
     el.style.display = "block";
     var fade = setInterval(() => {
         if (opacity < 1) {
-            opacity += 0.05;
+            opacity += 0.025;
             el.style.opacity = opacity.toString();
         } else {
             clearInterval(fade);
@@ -17,11 +17,12 @@ const fade_out = (el: HTMLElement, anim_len: number): void => {
     var opacity = 1;
     var fade = setInterval(() => {
         if (opacity > 0.05) {
-            el.style.opacity = opacity.toString();
             opacity -= 0.05;
+            el.style.opacity = opacity.toString();
         } else {
-            clearInterval(fade);
             el.style.display = "none";
+            el.style.opacity = "0";
+            clearInterval(fade);
         }
     }, anim_len / 20);
 };
