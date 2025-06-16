@@ -1,10 +1,10 @@
 <script lang="ts">
+    import ProjectCard from "$lib/projects/ProjectCard.svelte";
 </script>
 
 <div
-    class="flex flex-col flex-wrap justify-start items-center mt-10 grow gap-15"
+    class="mt-10 flex grow flex-col flex-wrap items-center justify-start gap-10"
 >
-    <button class="project-card card-float-in"> asdf </button>
-    <button class="project-card card-float-in"> asdf </button>
-    <button class="project-card card-float-in"> asdf </button>
+    <ProjectCard></ProjectCard>
+    <ProjectCard></ProjectCard>
 </div>
