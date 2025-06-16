@@ -46,6 +46,18 @@
         }
     };
 
+    const copy_discord_user = (username: string) => {
+        navigator.clipboard.writeText(username);
+
+        let discord_tooltip = document.getElementById("discord-tooltip")!;
+        discord_tooltip.innerText = "Copied";
+        discord_tooltip.classList.add("text-dark-foam!");
+        setTimeout(() => {
+            discord_tooltip.innerText = username;
+            discord_tooltip.classList.remove("text-dark-foam!");
+        }, 1250);
+    };
+
     let { children } = $props();
 </script>
 
@@ -53,27 +65,28 @@
     class={`bg-dark-surface border-dark-highlight-low z-50 h-10 w-full border-b-1 shadow-md ${animate_header_footer(true, false)}`}
 >
     <div
-        class="flex justify-around items-center py-2 px-4 mx-auto mb-10 max-w-4xl text-dark-subtle"
+        class="text-dark-subtle mx-auto mb-10 flex max-w-4xl items-center justify-around px-4 py-2"
     >
         <a
             onclick={(e) => navigate(e, base + "/")}
             href="{base}/"
-            class={"header-item " + is_on_page("whoami")}>Whoami</a
+            class={"header-item font-medium " + is_on_page("whoami")}>Whoami</a
         >
         <a
             onclick={(e) => navigate(e, base + "/projects")}
             href="{base}/projects"
-            class={"header-item " + is_on_page("projects")}>Projects</a
+            class={"header-item font-medium " + is_on_page("projects")}
+            >Projects</a
         >
         <a
             onclick={(e) => navigate(e, base + "/uni")}
             href="{base}/uni"
-            class={"header-item " + is_on_page("uni")}>Uni</a
+            class={"header-item font-medium " + is_on_page("uni")}>Uni</a
         >
         <a
             onclick={(e) => navigate(e, base + "/fun")}
-            href="{base}/socials"
-            class={"header-item " + is_on_page("fun")}>For Fun</a
+            href="{base}/fun"
+            class={"header-item font-medium " + is_on_page("fun")}>For Fun</a
         >
     </div>
 </div>
@@ -86,14 +99,35 @@
     id="footer"
     class={`text-dark-subtle border-dark-highlight-low mt-10 flex min-h-10 w-full flex-col justify-center border-t-2 ${animate_header_footer(false, true)}`}
 >
-    <div class="flex flex-row justify-between items-center px-5 w-full h-full">
-        <a href="https://github.com/nokotan8/portfolio" class="text-xs"
-            >Source</a
-        >
-        <span class="flex flex-row gap-4 text-sm">
+    <div class="flex h-full w-full flex-row items-center justify-between px-5">
+        <div class="text-xs">
+            <a
+                href="https://github.com/nokotan8/portfolio"
+                target="_blank"
+                class="text-xs">Source</a
+            >
+            <span class="text-dark-muted">|</span> Theme:
+            <a
+                href="https://rosepinetheme.com/palette/"
+                target="_blank"
+                class="text-xs">Rosé Pine</a
+            >
+        </div>
+        <span class="flex flex-row gap-2 text-sm">
             <a href="https://github.com/nokotan8" target="_blank">GitHub</a>
-            <a href="" target="_blank">Discord</a>
-            <a>LinkedIn</a>
+            <span class="text-dark-muted">|</span>
+            <button
+                class="tooltip hover:text-dark-text"
+                onclick={() => copy_discord_user("fancywhal3")}
+                >Discord
+                <span id="discord-tooltip" class="tooltip-text">fancywhal3</span
+                >
+            </button>
+            <span class="text-dark-muted">|</span>
+            <a
+                href="https://www.linkedin.com/in/justin-t-451667270/"
+                target="_blank">LinkedIn</a
+            >
         </span>
     </div>
 </div>

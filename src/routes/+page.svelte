@@ -27,7 +27,7 @@
         <ul class="flex flex-col gap-0.5 indent-5">
             <li>Web application security</li>
             <li>Concurrent / parallel computing</li>
-            <li>Cryptographic hashing</li>
+            <li>Cryptography</li>
             <li>Computing algorithms</li>
         </ul>
         <p><span class="font-bold text-dark-rose">Hobbies:</span></p>

@@ -12,6 +12,10 @@ body {
     @apply text-dark-text;
 }
 
+a:hover {
+    @apply text-dark-text;
+}
+
 .header-item {
     @apply h-8;
     @apply border-b-2 border-transparent;
@@ -25,12 +29,53 @@ body {
 }
 
 .project-card {
-    height: 7.5rem;
-    width: 37.5rem;
-    border-radius: 0.5rem;
-    transition: scale 0.3s;
-    @apply bg-dark-overlay hover:scale-106;
-    @apply shadow-lg/15;
+    transition: height 0.2s ease;
+}
+
+.project-card-expanded {
+    height: 25rem;
+}
+
+/* Modified from: https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    @apply bg-dark-overlay text-dark-text;
+    visibility: hidden;
+    width: 100px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -50px;
+
+    opacity: 0;
+    transition: opacity 0.35s;
+}
+
+.tooltip:hover .tooltip-text {
+    opacity: 1;
+}
+
+.tooltip .tooltip-text::after {
+    @apply border-t-dark-overlay border-solid border-transparent;
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 7.5px;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
 }
 
 /* -------------------- Animations -------------------- */
@@ -119,7 +164,7 @@ body {
 /* From: https://rosepinetheme.com/palette/ */
 @theme {
     --color-dark-base: #191724;
-    --color-dark-surface: #191724;
+    --color-dark-surface: #1f1d2e;
     --color-dark-overlay: #26233a;
     --color-dark-muted: #6e6a86;
     --color-dark-subtle: #908caa;
